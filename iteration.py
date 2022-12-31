@@ -61,6 +61,18 @@ for i in range(len(testList2)):
         print(index,y)
 
     
+   
+testList3 = [['test', 'for', 'jc'], ['cool', 'fkin', 'beans','lol']]
 
+
+#print nested lists AND index position AND CHARs in each ITEM
+print()
+for i in range(len(testList3)):
+    print('\nNested list: ' + str(i))
+    print('   ' + str(testList3[i]))
+    
+    for index,y in enumerate(testList3[i]):
+        #print(index,y)  
+        print('index: ' + str(index) + ' - ' + y + ' - ' + str(len(y)) + ' characters') #works great
        
 
