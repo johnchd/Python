@@ -36,8 +36,8 @@ print(list(p.glob('*.py')))
 """
 
 
-newFile = open('/Users/john/Desktop/GoogleDrive/ATBS/RW-Files/read.py')
-newFile
+newFile = open('/Users/john/Desktop/GoogleDrive/ATBS/RW-Files/paths.py')
+print(newFile.read())
 
 
 
