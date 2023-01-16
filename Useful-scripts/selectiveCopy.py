@@ -10,25 +10,6 @@ import os, glob, shutil
 
 
 
-'''
-for folderName, subFolders, fileNames in os.walk('/Users/john/Desktop/GoogleDrive/ATBS/RW-Files'):
-    print('The folder name is: ' + folderName)
-    print('The subfolders in ' + folderName + ' are: ' + str(subFolders))
-    print('The filneames in ' + folderName + ' are: ' + str(fileNames) + ' \n')
-'''
-
-#part 1
-#simple for loop to find all specific files within a directory
-'''
-for folderName, subFolders, fileNames in os.walk('/Users/john/Desktop/GoogleDrive/ATBS/RW-Files'):
-    for files in fileNames: 
-        #print(files)
-
-        if files.endswith('.py'):
-            #print(files)
-            print(os.path.join(folderName, files))
-'''
-
 for folderName, subFolders, fileNames in os.walk('/Users/john/Desktop/GoogleDrive/ATBS'):
     for files in fileNames: 
         #print(files)
@@ -45,6 +26,3 @@ for folderName, subFolders, fileNames in os.walk('/Users/john/Desktop/GoogleDriv
           
             #copy to directory
             shutil.copy2(x, '/Users/john/Desktop/GoogleDrive/ATBS/createdDir')
-
-
-
