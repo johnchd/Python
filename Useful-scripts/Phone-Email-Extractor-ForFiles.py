@@ -1,7 +1,13 @@
 #!/usr/bin/python3
 import os, glob, re
 
-#find emails/phone numbers in TXT file
+#Program that finds emails/phone numbers in specified file(s). 
+#File extensions include: txt, csv, xls, any text based file
+
+#Steps
+    #Part 1 - Regex
+    #Part 2 - Specifying the path to work in
+    #Part 3 - Identifying all specified files and parsing those files using RegEx
 
 #Part 1 - regex
 emailRegex = re.compile(r'''(
@@ -53,8 +59,6 @@ for file in glob.glob('*txt'):
         print(i[0])
 
 #it  does not appear python can read/open pdf files without a module like pdfminer.six
-#i believe this will work with any text based file like: csv, xls, txt, py, type 
-
-################
+#i believe this will work with any text based file like: csv, xls, txt, py,  
 
 
