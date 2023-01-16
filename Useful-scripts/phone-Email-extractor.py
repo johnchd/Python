@@ -1,9 +1,12 @@
 #!/usr/bin/python3
 
-#steps
-    #1 - create email regex
-    #2 - create phone regex
-    #3 - put it all together
+#Program that analyzes clipboard information and finds PII such as emails/phone numbers
+#All output will be output into the terminal, and copied back into clipboard
+
+#Steps
+    #1 - Create email regex
+    #2 - Create phone regex
+    #3 - Put it all together
 
 import re, pyperclip
 
@@ -65,19 +68,3 @@ a
 sdf
 
 """
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
