@@ -24,14 +24,12 @@ print(x[0],y[0])
 #prints eth and price
 #print(x[1],y[1])
 
-for name, price in zip(x, y):
-    print('"name":"{}" - "price":{}'.format(name, price))
+
 
 #output is a little bit messed up but this is enoough for POC
 print()
 for name, price in zip(x, y):
-    #print('"{}" - ""{}'.format(name, price))
-    print('{} - {}'.format(name, price))
+    print(name + ' - ' + price)
 
 
 
