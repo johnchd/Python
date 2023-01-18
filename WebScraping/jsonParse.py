@@ -37,7 +37,7 @@ for name in test_dict['data']:
 print('List of names found:\n' + str(nameList))
 
 priceList = []
-#prints all prices
+#prints all prices AND adds to list
 print()
 for name in test_dict['data']:
     #print(name['quote']['USD']['price'])
