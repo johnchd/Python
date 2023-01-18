@@ -49,6 +49,8 @@ print('All names and prices put together:')
 for name, price in zip(nameList, priceList):
     print(name + ' - ' + str(price))
 
+#See JSON response cleaned up
+#print(json.dumps(test_dict, indent=2))
 
 
 
