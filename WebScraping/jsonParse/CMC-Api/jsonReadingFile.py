@@ -80,11 +80,19 @@ status:
 
 #part 6 -- stack overflow --- works but looking for better solution
 
+os.chdir("/Users/john/Desktop/GoogleDrive/ATBS/WebScraping/jsonParse/Generated-Files")
+items = []
+with open('jsonParse2-3-test.txt') as f: #jsonParse2-3-test.txt (testPOC)
+    for line in f:
+        items.append(json.loads(line))
 
+print(items)
 
+'''
 
 os.chdir("/Users/john/Desktop/GoogleDrive/ATBS/WebScraping/jsonParse/Generated-Files")
-with open('CMC-Final-Show.txt') as f:
+with open('jsonParse2-3-test.txt') as f:
     json_data = json.load(f)
 
 print(json_data)
+'''
