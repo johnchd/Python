@@ -9,3 +9,12 @@ x = requests.get('https://coinmarketcap.com/')
 print('Source code: ' + x.text[:15])
 
 print('Status code: ' + str(x.status_code))
+
+#print(dir(x))
+
+#print all content headers
+#print(x.headers)
+
+
+testParams = {'listing':'btc',}
+test = requests.get('https://coinmarketcap.com/')
