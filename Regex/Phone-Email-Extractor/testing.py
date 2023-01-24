@@ -34,7 +34,7 @@ phoneRegex = re.compile(r'''(
     
     )''', re.VERBOSE)
 
-test1 = phoneRegex.findall('test 4 jc 440-759-4083, 404.330-3030, (494)-340-3033')
+test1 = phoneRegex.findall('test 4 jc 440-759-2334, 404.330-3030, (494)-340-3033')
 #print(test1) #ensure it prints out number
 print()
 for i in test1:
