@@ -5,7 +5,7 @@ from requests.auth import HTTPBasicAuth
 import urllib.request
 import os
 
-os.chdir("/Users/john/Desktop/GoogleDrive/ATBS/WebScraping/jsonParse/Generated-Files")
+os.chdir("/Users/john/Desktop/<paths>")
 
 
 #Auth to CMC's API
@@ -21,7 +21,7 @@ url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start
 
 headers = {
   'Accepts': 'application/json',
-  'X-CMC_PRO_API_KEY': 'e12fc04a-ac13-4f7f-8e83-9cd3a2d2f43e',
+  'X-CMC_PRO_API_KEY': '<api-key>',
 }
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
