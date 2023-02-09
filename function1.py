@@ -3,99 +3,38 @@ import requests
 
 
 
-#method 1
-# for i in range(1, 5):
-#     currencies = "https://api.coinmarketcap.com/data-api/v3/cryptocurrency/historical?id={}&convertId=2781&timeStart=1674867500&timeEnd=1674867600".format(i)
-    
-
-#     def GetCurrencyInfo(url):
-#         global btcData
-#         req = requests.get(url)
-#         btcResponse = req.content
-#         btcData = json.loads(btcResponse)
-#         print(btcData)
-#         # return btcData
-#     GetCurrencyInfo(currencies)
-
-
-
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-
-# #method 2 - works
-# def main():
-#     for i in range(1, 5):
-#         currencies = "https://api.coinmarketcap.com/data-api/v3/cryptocurrency/historical?id={}&convertId=2781&timeStart=1674867500&timeEnd=1674867600".format(i)
-        
-
-#         def GetCurrencyInfo(url):
-#             req = requests.get(url)
-#             global btcData
-#             allResponses = req.content
-#             btcData = json.loads(allResponses)
-#             print(btcData)
-#             # return btcData
-#         GetCurrencyInfo(currencies)
-# main()
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-
-
-
-#method 3 - works
-def main():
+def rawInfo():
+    rawInfoList = []
     for i in range(1, 5):
-        currencies = "https://api.coinmarketcap.com/data-api/v3/cryptocurrency/historical?id={}&convertId=2781&timeStart=1674867500&timeEnd=1674867600".format(i)
-        
-
-        def GetCurrencyInfo(url):
-            req = requests.get(url)
-            global btcData
-            allResponses = req.content
-            btcData = json.loads(allResponses)
-            # print(btcData)
-            # return btcData
-        # GetCurrencyInfo(currencies)
-        x = GetCurrencyInfo(currencies)
-
-        
-        def moreInfo(test):
-            # testDict = {}
-            # priceAnalysisKey = btcData['data']['symbol']
-            priceAnalysisValue = btcData['data']['symbol']
-            print(priceAnalysisValue) #BTC
-            # testDict[priceAnalysisKey] = priceAnalysisValue
-            # print(testDict)
-        moreInfo(x)
-
-main()
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+        currencies = "https://api.coinmarketcap.com/data-api/v3/cryptocurrency/historical?id={}&convertId=2781&timeStart=1674861000&timeEnd=1674867600".format(i)
+        req = requests.get(currencies)
+        allResponses = req.content
+        allData = json.loads(allResponses)
+        # print(allData) #this prints out 5 dictionaries
+        rawInfoList.append(allData)
+    # print(rawInfoList)
+    symbol_and_price(rawInfoList)
 
 
-# def main():
-    
-#     def testing():
-#         for i in range(1, 5):
-#             currencies = "https://api.coinmarketcap.com/data-api/v3/cryptocurrency/historical?id={}&convertId=2781&timeStart=1674867500&timeEnd=1674867600".format(i)
-#             # print(currencies)
-#             return currencies
-#             print(currencies)
+def symbol_and_price(rawInfoList):
+    testDict = {}
+    for req in rawInfoList:
+        # print(req) #<class 'dict'>
+        # print(req['data']['symbol']) #btc/ltc/etc
+        symbol = req['data']['symbol']
+        timeOpens = req['data']['quotes'] # lists
 
-
-#         # def GetCurrencyInfo(url):
-#         #     req = requests.get(url)
-#         #     allResponses = req.content
-#         #     allData = json.loads(allResponses)
-#         #     print(allData)
-#         #     # return btcData
-#         # GetCurrencyInfo(currencies)
-# main()
-
-
-
-            # def moreInfo(test):
-            #     priceAnalysis = btcData['data']['symbol']
-            #     print(priceAnalysis) #BTC
-            # moreInfo(x)
-
+        for req in timeOpens:
+            # print(req['quote'])
+            priceAnalysis = req['quote']
+            # testDict[priceAnalysis] = symbol
+            singlePrice = priceAnalysis['close']
+        # print(singlePrice)
+        # print(symbol)
+        testDict[symbol] = singlePrice
+    # print(testDict)
+            
+rawInfo()
 
 
 
